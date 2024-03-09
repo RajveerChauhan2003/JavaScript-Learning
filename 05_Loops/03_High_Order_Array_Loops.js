@@ -49,24 +49,44 @@
 
 // // for each loop 
 
-const coding = ["js","ruby","c++","python"]
+// const coding = ["js","ruby","c++","python"]
 
-coding.forEach(function (item){    // function inside is a callback function 
-console.log(item);
-})
+// coding.forEach(function (item){    // function inside is a callback function 
+// console.log(item);
+// })
 
-coding.forEach( (item) => {
-    console.log(item);
-})
+// coding.forEach( (item) => {
+//     console.log(item);
+// })
 
-function printme(item){
-    console.log(item);
-}
+// function printme(item){
+//     console.log(item);
+// }
 
-coding.forEach(printme)
+// coding.forEach(printme)
 
-coding.forEach( (item,index,array) => {   // itni cheezein milti hai
-    console.log(item,index,array);
-})
+// coding.forEach( (item,index,array) => {   // itni cheezein milti hai
+//     console.log(item,index,array);
+// })
+
+
+// Filter , Map , Reduce 
+
+const nums = [1,2,3,4,5,6,7,8,9]
+
+// const newnums = nums.filter( (item) => {      // it returns based on a specific condition(s) 
+//     return item > 4 && item%2==0
+// })
+
+// const newnums = nums.map( (num) => num*2 )      // it operates on every element of the array
+
+const newnums = nums.reduce( (accumulator,currentvalue) => {   // adds all value in array to the accumulator
+    console.log(`Acc : ${accumulator} CurVal : ${currentvalue}`);
+    return accumulator + currentvalue
+} , 0 )
+
+console.log(newnums);
+
+
 
 
