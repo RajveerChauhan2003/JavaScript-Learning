@@ -4,10 +4,10 @@
 //     "fee":"free"
 // }
 
-// [                        //array form
+// [                        // array form
 //     {},
 //     {},
-//     {}
+//     {}a
 // ]
 
 // api is like apna kaam kisi aur se karana 
