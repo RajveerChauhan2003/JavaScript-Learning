@@ -26,8 +26,8 @@ console.log(Math.random()); // between 0 and 1
 
 // for a range :
 
-const min = 10
-const max = 20
+const min = 1
+const max = 3
 
 console.log(Math.floor(Math.random()*(max-min+1)+min));
 
