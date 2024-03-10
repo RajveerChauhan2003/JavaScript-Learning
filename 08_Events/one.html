@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+<body style="background-color: #414141;color: aliceblue;">
+    <h2>Amazing Images</h2>
+    <div>
+        <ul id="images">
+            <li><img src="https://images.pexels.com/photos/56759/pexels-photo-56759.jpeg?auto=compress&cs=tinysrgb&w=600" alt="photoshop" id="photoshop" width="200px"></li>
+            <li><img src="https://images.pexels.com/photos/402028/pexels-photo-402028.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="japan" width="200px"></li>
+            <li><img src="https://images.pexels.com/photos/2438/nature-forest-waves-trees.jpg?auto=compress&cs=tinysrgb&w=600" alt="" id="river" width="200px"></li>
+            <li><img src="https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="owl" width="200px"></li>
+            <li><img src="https://images.pexels.com/photos/1615776/pexels-photo-1615776.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" id="prayer" width="200px" height="150px"></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+    <script>
+        // onclick bhi hota hai but not scalable 
+        // jQuery me onEventListener hota hia aur pehele attachEvent() bhi use hua hai
+
+        // document.getElementById('images').addEventListener('click',(e)=>{
+        //     console.log("images clicked")
+        // },false)
+        // document.getElementById('google').addEventListener('click',(e)=>{
+        //     e.preventDefault()
+        //     // e.stopPropagation()   // issse upar wale pe nhi jayega    // agar true to pehele upar fir neeche( event capturing)
+        //     console.log("google clicked")
+        // },false)    // event bubbling (pehele neeche fir upar) 
+
+        // e. ...
+        // type , timestamp , screenX , ScreenY, target , srcelement, toelement, altkey , keycode , shiftkey ,currentTarget , clientX , clientY
+
+        // events spillover
+
+        document.getElementById('images').addEventListener('click',(e)=>{
+            if(e.target.tagName ==='IMG'){    
+                const toBeRemoved = e.target.parentNode
+                toBeRemoved.remove()
+                // toBeRemoved.parentNode.removeChild(toBeRemoved)
+            }
+            else{
+                console.log(e.target.tagName);
+            }
+        },false)
+    </script>
+</body>
+</html>
