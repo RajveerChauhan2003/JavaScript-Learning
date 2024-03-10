@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Removing Elements</title>
+</head>
+<body style="background-color: #212121; color: white;">
+    <ul>
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    document.querySelector('ul').className = "Language"
+    const ul = document.querySelector('.Language')
+    function addLang (langName) {
+        const li = document.createElement('li');
+        // li.innerText = `${langName}`;
+        li.appendChild(document.createTextNode(langName))  // optimised way
+        ul.appendChild(li)        
+    }
+    addLang("Python")
+    addLang("Java")
+    addLang("JavaScript")
+    addLang("C++")
+
+    // Edit
+
+    const secondLang = document.querySelector("li:nth-child(2)")
+    const newLi = document.createElement('li')
+    newLi.appendChild(document.createTextNode("Changed Language Value"))
+    secondLang.replaceWith(newLi)
+    // secondLang.outerHTML = .....
+
+    // Remove
+    document.querySelector("li:last-child").remove()
+    // secondLang.remove()  // no longer there in DOM tree
+</script>
+</html>
