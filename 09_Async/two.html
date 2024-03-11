@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interval Functions</title>
+</head>
+<body>
+    <h1></h1>
+    <button id="Stop">Stop</button>
+    <button id="Start">Start</button>
+</body>
+<script>
+    const stopBtn = document.getElementById('Stop')
+    const startBtn = document.getElementById('Start')
+    let intervalId
+
+    startBtn.addEventListener('click',(e)=>{
+        intervalId = setInterval(() => {
+            const toShow = new Date()
+            document.querySelector('h1').innerHTML=toShow.toLocaleTimeString()
+        }, 1000);
+    })
+
+    stopBtn.addEventListener('click',(e)=>{
+        clearInterval(intervalId)
+    })
+</script>
+</html>

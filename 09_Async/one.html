@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timeout Functions</title>
+</head>
+<body>
+    <h1>Bhagwan Placement Dila De</h1>
+    <button id="placementButton">Dila De</button>
+</body>
+<script>
+    const button = document.querySelector('#placementButton')
+    const changeText = function(){
+        document.querySelector('h1').innerHTML="Mil Gyiii Placement"
+    }
+    const timeoutfunction = setTimeout(changeText,2000)
+
+    button.addEventListener('click',()=>{
+        clearTimeout(timeoutfunction)
+        console.log("stopped")
+    })
+</script>
+</html>

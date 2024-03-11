@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Colours</title>
+    <style>
+        body{
+            background-color: #212121;
+            color: aliceblue;
+        }
+    </style>
+</head>
+<body>
+    <h1>Start : To start changing the background colurs automatically.</h1>
+    <h1>Stop : To stop at the current background colour.</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const startBtn = document.getElementById('start')
+    const stopBtn = document.getElementById('stop')
+
+    let colourChangeInterval ;
+
+    startBtn.addEventListener('click',(e)=>{
+        colourChangeInterval=setInterval(()=>{
+            const r = parseInt(Math.random()*254+1)
+            const g = parseInt(Math.random()*254+1)
+            const b = parseInt(Math.random()*254+1)
+            document.body.style.backgroundColor=`rgb(${r},${g},${b})`
+        },1000)
+    })
+
+    stopBtn.addEventListener('click',(e)=>{
+        clearInterval(colourChangeInterval)
+    })
+</script>
+</html>
